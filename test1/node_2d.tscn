@@ -1,0 +1,158 @@
+[gd_scene load_steps=13 format=3 uid="uid://cj3pag6vlxpw8"]
+
+[ext_resource type="Script" path="res://Fps_cntr.gd" id="1_kxokd"]
+[ext_resource type="Texture2D" uid="uid://dhnfyiqflsays" path="res://sprites/car_01.png" id="2_3mtat"]
+[ext_resource type="Script" path="res://autoScript.gd" id="3_fumij"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mcsw7"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ek8y"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_jky0i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjhpa"]
+font_size = 26
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n01ue"]
+size = Vector2(16, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_splko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k1v0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ww8hq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6pc1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+
+[node name="ColorRect" type="ColorRect" parent="Control/CanvasLayer"]
+offset_right = 264.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control/CanvasLayer"]
+offset_top = 184.0
+offset_right = 264.0
+offset_bottom = 264.0
+color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[node name="Label" type="Label" parent="Control/CanvasLayer"]
+offset_top = 184.0
+offset_right = 264.0
+offset_bottom = 207.0
+text = "Cantidad de autos"
+horizontal_alignment = 1
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Control/CanvasLayer"]
+script = ExtResource("1_kxokd")
+
+[node name="FPSMeter" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_right = 102.0
+offset_bottom = 34.0
+text = "9999 FPS"
+label_settings = SubResource("LabelSettings_mcsw7")
+
+[node name="FtimeMeter" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_top = 32.0
+offset_right = 86.0
+offset_bottom = 60.0
+text = "999.9 ms"
+label_settings = SubResource("LabelSettings_7ek8y")
+
+[node name="FPSAvg" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_top = 72.0
+offset_right = 59.0
+offset_bottom = 95.0
+text = "999 avg"
+label_settings = SubResource("LabelSettings_jky0i")
+
+[node name="FPSMax" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 153.0
+offset_bottom = 95.0
+text = "999 max
+"
+label_settings = SubResource("LabelSettings_jky0i")
+
+[node name="FPSMin" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_left = 184.0
+offset_top = 72.0
+offset_right = 249.0
+offset_bottom = 95.0
+text = "999 min
+"
+label_settings = SubResource("LabelSettings_jky0i")
+
+[node name="FPSUno" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_top = 96.0
+offset_right = 97.0
+offset_bottom = 119.0
+text = "1% bajo: 999"
+label_settings = SubResource("LabelSettings_jky0i")
+
+[node name="FPSCeroUno" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_top = 120.0
+offset_right = 111.0
+offset_bottom = 143.0
+text = "0.1% bajo: 999"
+label_settings = SubResource("LabelSettings_jky0i")
+
+[node name="Memoria" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_top = 152.0
+offset_right = 40.0
+offset_bottom = 175.0
+text = "Memoria: 9999 MB"
+
+[node name="TotalAutos" type="Label" parent="Control/CanvasLayer/CanvasGroup"]
+offset_top = 208.0
+offset_right = 264.0
+offset_bottom = 244.0
+text = "999"
+label_settings = SubResource("LabelSettings_vjhpa")
+horizontal_alignment = 1
+
+[node name="Auto_0" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(574.855, 324)
+texture = ExtResource("2_3mtat")
+script = ExtResource("3_fumij")
+
+[node name="Area2D" type="Area2D" parent="Auto_0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Auto_0/Area2D"]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_n01ue")
+
+[node name="ZonaIzquierda" type="ShapeCast2D" parent="Auto_0"]
+visible = false
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_splko")
+target_position = Vector2(0, 16)
+
+[node name="ZonaTrasera" type="ShapeCast2D" parent="Auto_0"]
+visible = false
+shape = SubResource("RectangleShape2D_1k1v0")
+target_position = Vector2(-14, 0)
+
+[node name="ZonaDerecha" type="ShapeCast2D" parent="Auto_0"]
+visible = false
+shape = SubResource("RectangleShape2D_ww8hq")
+target_position = Vector2(14, 0)
+
+[node name="ZonaDelantera" type="ShapeCast2D" parent="Auto_0"]
+visible = false
+shape = SubResource("RectangleShape2D_q6pc1")
+target_position = Vector2(0, -43)
