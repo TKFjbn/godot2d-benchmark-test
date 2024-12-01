@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhm8rdqoxsl1n"]
+
+[ext_resource type="Texture2D" uid="uid://dhnfyiqflsays" path="res://sprites/car_01.png" id="1_3xbkt"]
+[ext_resource type="Script" path="res://auto_0.gd" id="1_y1sps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evqdj"]
+size = Vector2(16, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bts4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu2sl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iagwg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5uj2"]
+
+[node name="Auto" type="Node2D"]
+
+[node name="Auto_0" type="StaticBody2D" parent="."]
+script = ExtResource("1_y1sps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Auto_0"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_evqdj")
+
+[node name="Sprite" type="Sprite2D" parent="Auto_0"]
+texture_filter = 1
+texture = ExtResource("1_3xbkt")
+
+[node name="ZonaIzquierda" type="ShapeCast2D" parent="Auto_0"]
+visible = false
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_bts4d")
+target_position = Vector2(0, 16)
+
+[node name="ZonaTrasera" type="ShapeCast2D" parent="Auto_0"]
+visible = false
+shape = SubResource("RectangleShape2D_pu2sl")
+target_position = Vector2(-14, 0)
+
+[node name="ZonaDerecha" type="ShapeCast2D" parent="Auto_0"]
+visible = false
+shape = SubResource("RectangleShape2D_iagwg")
+target_position = Vector2(14, 0)
+
+[node name="ZonaDelantera" type="ShapeCast2D" parent="Auto_0"]
+visible = false
+shape = SubResource("RectangleShape2D_m5uj2")
+target_position = Vector2(0, -43)
