@@ -1,5 +1,6 @@
 extends CanvasGroup
 
+@onready var fpslbl = $FPSMeter
 
 var fps = 0
 var fTime = 0.0
@@ -48,6 +49,8 @@ func _process(_delta) -> void:
 	if fpsList.size() > capMuestreoFps:
 		fpsList.pop_front()
 	
+	var contador = get_tree().get_nodes_in_group("Auto")
+	
 	#contador de FPS
 	$FPSMeter.text = "FPS: "+str(fps)
 	$FtimeMeter.text = ""+str("%.2f" % fTime)+" ms"
@@ -57,6 +60,7 @@ func _process(_delta) -> void:
 	$FPSUno.text = "1% bajo: "+str(fpsUnoP)
 	$FPSCeroUno.text = "0.1% bajo: "+str(fpsCeroUnoP)
 	$Memoria.text = "memoria: "+str("%.2f" % memoriaTotalMB)+" MB"
+	$TotalAutos.text = str(contador.size())
 	pass
 	
 func _on_timer_timeout():

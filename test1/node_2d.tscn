@@ -112,4 +112,3 @@ label_settings = SubResource("LabelSettings_vjhpa")
 horizontal_alignment = 1
 
 [node name="Spawner" parent="." instance=ExtResource("2_cimok")]
-position = Vector2(576, 0)
