@@ -12,9 +12,11 @@ var fpsCeroUnoP
 var fpsUnoP
 var memoriaTotal
 var memoriaTotalMB
+var totalAutos
 
 var capMuestreoFps = 1024
 var intervalo = 2.0
+var contenidoLog = ""
 
 
 # Called when the node enters the scene tree for the first time.
@@ -50,6 +52,8 @@ func _process(_delta) -> void:
 		fpsList.pop_front()
 	
 	var contador = get_tree().get_nodes_in_group("Auto")
+	totalAutos = contador.size()
+	
 	
 	#contador de FPS
 	$FPSMeter.text = "FPS: "+str(fps)
@@ -60,8 +64,15 @@ func _process(_delta) -> void:
 	$FPSUno.text = "1% bajo: "+str(fpsUnoP)
 	$FPSCeroUno.text = "0.1% bajo: "+str(fpsCeroUnoP)
 	$Memoria.text = "memoria: "+str("%.2f" % memoriaTotalMB)+" MB"
-	$TotalAutos.text = str(contador.size())
+	$TotalAutos.text = str(totalAutos)
+	
+	#actualizar log
+	if totalAutos != 0 && totalAutos % 50  == 0:
+		_add_data_log()
+		pass
+	
 	pass
+
 	
 func _on_timer_timeout():
 	
@@ -91,4 +102,21 @@ func _on_timer_timeout():
 		#reiniciar la lista de muestras para el siguiente intervalo
 		fpsList.clear()
 	
+func _add_data_log():
+	var nuevo_registro = "
+	===========LOG============"+"
+	Objetos = "+str(totalAutos)+"
+	FPS = "+str(fps)+"
+	Frametime = "+str("%.2f" % fTime)+"
+	FPS avg = "+str("%.f" % fpsAvg)+"
+	FPS max = "+str(fpsMax)+"
+	FPS min = "+str(fpsMin)+"
+	1% = "+str(fpsUnoP)+"
+	0.1% = "+str(fpsCeroUnoP)+"
+	Memoria = "+str("%.2f" % memoriaTotalMB)+" MB"+"
+	==========================​"
 	
+	contenidoLog = nuevo_registro
+	$TextEdit.text = contenidoLog
+		
+	pass

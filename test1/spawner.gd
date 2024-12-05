@@ -4,6 +4,7 @@ extends Node2D
 
 @onready var autoNode = preload("res://auto_0.tscn")
 @onready var screen_size = get_viewport_rect().size
+@onready var autosLbl = $"../Control/CanvasLayer/CanvasGroup/TotalAutos"
 var xMid
 var yMid
 
@@ -29,8 +30,10 @@ func _process(delta: float) -> void:
 		if(nextSpawnTime <= 0.0):
 			generaAutos(Vector2(xMid,yMid))
 			nextSpawnTime = intervaloSpawn
+			autosLbl.label_settings.font_color = Color.WHITE
 	else:
-		print("ya no se generan más objetos por limite de fps")
+		#autosLbl.set("theme_override_colors/font_color", red)
+		autosLbl.label_settings.font_color = Color.RED
 	
 	
 	

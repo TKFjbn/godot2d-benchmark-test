@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj3pag6vlxpw8"]
+[gd_scene load_steps=11 format=3 uid="uid://cj3pag6vlxpw8"]
 
 [ext_resource type="Script" path="res://Fps_cntr.gd" id="1_kxokd"]
 [ext_resource type="PackedScene" uid="uid://5qmue1m5p4ww" path="res://spawner.tscn" id="2_cimok"]
@@ -13,6 +13,116 @@ font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_vjhpa"]
 font_size = 26
+
+[sub_resource type="SystemFont" id="SystemFont_fuguo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b7fm"]
+
+[sub_resource type="FontFile" id="FontFile_f4y8m"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+
+[sub_resource type="Theme" id="Theme_cgbpo"]
+resource_local_to_scene = true
+default_font = SubResource("FontFile_f4y8m")
+default_font_size = 14
+Label/colors/font_color = Color(0.0251768, 0.434838, 4.81307e-07, 1)
+TextEdit/colors/background_color = Color(0, 0, 0, 0.854902)
+TextEdit/colors/caret_background_color = Color(0, 0, 0, 1)
+TextEdit/colors/caret_color = Color(1, 1, 1, 0)
+TextEdit/colors/font_color = Color(0, 1, 0.0117647, 1)
+TextEdit/colors/font_readonly_color = Color(0.203922, 1, 0, 1)
+TextEdit/font_sizes/font_size = 16
+TextEdit/fonts/font = SubResource("SystemFont_fuguo")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_8b7fm")
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,6 +144,13 @@ offset_top = 184.0
 offset_right = 264.0
 offset_bottom = 264.0
 color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control/CanvasLayer"]
+visible = false
+offset_left = 832.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0235294, 0.0235294, 0.0235294, 0.396078)
 
 [node name="Label" type="Label" parent="Control/CanvasLayer"]
 offset_top = 184.0
@@ -110,5 +227,27 @@ offset_bottom = 244.0
 text = "999"
 label_settings = SubResource("LabelSettings_vjhpa")
 horizontal_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="Control/CanvasLayer/CanvasGroup"]
+self_modulate = Color(1, 1, 1, 0.658824)
+top_level = true
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_cgbpo")
+text = "Log:"
+placeholder_text = "
+"
+editable = false
+drag_and_drop_selection_enabled = false
+wrap_mode = 1
+indent_wrapped_lines = true
+scroll_smooth = true
+scroll_past_end_of_file = true
 
 [node name="Spawner" parent="." instance=ExtResource("2_cimok")]
