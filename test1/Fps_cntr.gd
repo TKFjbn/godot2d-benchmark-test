@@ -32,8 +32,6 @@ func _ready():
 	
 	#DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta) -> void:
 	#var last_tick := 0
@@ -115,6 +113,7 @@ func _add_data_log():
 	0.1% = "+str(fpsCeroUnoP)+"
 	Memoria = "+str("%.2f" % memoriaTotalMB)+" MB"+"
 	==========================​"
+	
 	
 	contenidoLog = nuevo_registro
 	$TextEdit.text = contenidoLog

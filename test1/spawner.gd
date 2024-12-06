@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	var fps = Engine.get_frames_per_second()
 	nextSpawnTime -= delta
 	
-	if fps > 30:
+	if fps > 35:
 		if(nextSpawnTime <= 0.0):
 			generaAutos(Vector2(xMid,yMid))
 			nextSpawnTime = intervaloSpawn
